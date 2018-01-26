@@ -1,36 +1,34 @@
-package com.nwuensche.bookinventory
+package com.nwuensche.bookinventory.view
 
 
+import android.support.test.espresso.Espresso.onData
 import android.support.test.espresso.Espresso.onView
+import android.support.test.espresso.action.ViewActions.click
 import android.support.test.espresso.assertion.ViewAssertions.matches
 import android.support.test.espresso.matcher.ViewMatchers.*
 import android.support.test.rule.ActivityTestRule
 import android.support.test.runner.AndroidJUnit4
-import android.test.suitebuilder.annotation.LargeTest
 import android.view.View
 import android.view.ViewGroup
-import com.nwuensche.bookinventory.view.MainActivity
+import com.nwuensche.bookinventory.R
 import org.hamcrest.Description
 import org.hamcrest.Matcher
-import org.hamcrest.Matchers.allOf
+import org.hamcrest.Matchers.*
 import org.hamcrest.TypeSafeMatcher
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
-@LargeTest
 @RunWith(AndroidJUnit4::class)
 class MainActivityTest {
 
-    @Rule
+    @get:Rule
     var mActivityTestRule = ActivityTestRule(MainActivity::class.java)
 
     @Test
-    fun mainActivityTest() {
-        // Main List View
-
+    fun mainActivityTest2() {
         val textView = onView(
-                allOf<View>(withId(R.id.titleItemView), withText("The Sound and the Fury"),
+                allOf(withId(R.id.titleItemView), withText("The Sound and the Fury"),
                         childAtPosition(
                                 childAtPosition(
                                         withId(R.id.bookList),
@@ -39,16 +37,15 @@ class MainActivityTest {
                         isDisplayed()))
         textView.check(matches(withText("The Sound and the Fury")))
 
-        val textView2 = onView(
-                allOf<View>(withId(R.id.authorItemView), withText("William Faulkner"),
+        val constraintLayout = onData(anything())
+                .inAdapterView(allOf(withId(R.id.bookList),
                         childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.bookList),
-                                        0),
-                                2),
-                        isDisplayed()))
-        textView2.check(matches(withText("William Faulkner")))
+                                withClassName(`is`("android.widget.FrameLayout")),
+                                0)))
+                .atPosition(0)
+        constraintLayout.perform(click())
 
+        onView(withId(R.id.genreItemView)).check(matches(withText("Southern Gothic novel")))
     }
 
     private fun childAtPosition(
