@@ -23,7 +23,7 @@ import org.junit.runner.RunWith
  * @author nwuensche
  */
 @RunWith(AndroidJUnit4::class)
-class MainActivityTest {
+class IntegrationTest {
 
     @get:Rule
     var mActivityTestRule = ActivityTestRule(MainActivity::class.java)
