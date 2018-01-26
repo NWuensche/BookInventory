@@ -10,6 +10,9 @@ import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.sdk25.coroutines.onItemClick
 import org.jetbrains.anko.singleTop
 
+/**
+ * @author nwuensche
+ */
 class MainActivity : AppCompatActivity(), MainView {
 
     lateinit private var presenter: MainPresenter

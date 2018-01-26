@@ -5,7 +5,7 @@ import com.nwuensche.bookinventory.model.DataStorage
 import com.nwuensche.bookinventory.view.MainView
 
 /**
- * Created by nwuensche on 26.01.18.
+ * @author nwuensche
  */
 class MainPresenter(private val view: MainView) : Presenter {
     private var model: ArrayList<Book> = DataStorage.text

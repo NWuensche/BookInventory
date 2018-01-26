@@ -5,7 +5,7 @@ import com.nwuensche.bookinventory.model.DataStorage
 import com.nwuensche.bookinventory.view.ItemView
 
 /**
- * Created by nwuensche on 26.01.18.
+ * @author nwuensche
  */
 class ItemPresenter(private val view: ItemView) : Presenter {
     lateinit private var model: Book

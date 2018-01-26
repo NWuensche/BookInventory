@@ -3,7 +3,7 @@ package com.nwuensche.bookinventory.view
 import com.nwuensche.bookinventory.model.Book
 
 /**
- * Created by nwuensche on 26.01.18.
+ * @author nwuensche
  */
 interface ItemView {
     fun showItem(book: Book)

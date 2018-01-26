@@ -8,6 +8,9 @@ import com.nwuensche.bookinventory.presenter.ItemPresenter
 import kotlinx.android.synthetic.main.activity_item.*
 import org.jetbrains.anko.imageResource
 
+/**
+ * @author nwuensche
+ */
 class ItemActivity : AppCompatActivity(), ItemView {
     lateinit private var presenter: ItemPresenter
 

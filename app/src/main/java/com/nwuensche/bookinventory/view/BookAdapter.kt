@@ -12,7 +12,7 @@ import org.jetbrains.anko.imageResource
 
 
 /**
- * Created by nwuensche on 24.01.18.
+ * @author nwuensche
  */
 class BookAdapter(context: Context, books: ArrayList<Book>): ArrayAdapter<Book>(context, 0, books) {
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
