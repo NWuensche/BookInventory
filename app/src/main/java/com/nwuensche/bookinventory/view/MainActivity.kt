@@ -1,7 +1,8 @@
-package com.nwuensche.bookinventory
+package com.nwuensche.bookinventory.view
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.nwuensche.bookinventory.R
 
 class MainActivity : AppCompatActivity() {
 
