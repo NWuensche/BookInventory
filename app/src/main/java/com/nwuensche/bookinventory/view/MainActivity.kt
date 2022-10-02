@@ -25,8 +25,7 @@ class MainActivity : AppCompatActivity(), MainView {
 
         val arrayAdapter = BookAdapter(this, DataStorage.text)
         bookList.adapter = arrayAdapter
-
-        bookList.onItemClick { _, _, _, bookID -> presenter.onItemClicked(bookID.toInt())  }
+        bookList.setOnItemClickListener { _, _, _, bookID -> presenter.onItemClicked(bookID.toInt())  }
     }
 
     override fun showDetailedItem(bookID: Int) {
